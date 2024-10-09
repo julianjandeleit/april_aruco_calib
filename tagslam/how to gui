@@ -1,0 +1,6 @@
+xhost +local:*
+
+docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix/ tagslam
+
+docker run --rm -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix/ tagslam
+-> test with apt install firefox and /usr/bin/firefox
