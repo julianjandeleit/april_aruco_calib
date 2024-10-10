@@ -2,6 +2,7 @@ import os
 import numpy as np
 import cv2
 import json 
+import pathlib
 # from https://medium.com/@nflorent7/a-comprehensive-guide-to-camera-calibration-using-charuco-boards-and-opencv-for-perspective-9a0fa71ada5f
 
 # ------------------------------
@@ -9,13 +10,15 @@ import json
 ARUCO_DICT = cv2.aruco.DICT_4X4_50
 SQUARES_VERTICALLY = 5
 SQUARES_HORIZONTALLY = 7
-SQUARE_LENGTH = 0.03  # in meters
-MARKER_LENGTH = 0.015  # in meters
+#SQUARE_LENGTH = 0.03  # in meters
+#MARKER_LENGTH = 0.015  # in meters
+SQUARE_LENGTH = 0.10 # in meters
+MARKER_LENGTH = 0.08  # in meters
 # ...
 PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_set_1/'
 print(f"{ARUCO_DICT=}")
 # ------------------------------
-def get_calibration_parameters(img_dir):
+def get_calibration_parameters(img_dir, exclude_list=["GOPR0026.JPG"]):
     # Define the aruco dictionary, charuco board and detector
     dictionary = cv2.aruco.getPredefinedDictionary(ARUCO_DICT)
     board = cv2.aruco.CharucoBoard((SQUARES_VERTICALLY, SQUARES_HORIZONTALLY), SQUARE_LENGTH, MARKER_LENGTH, dictionary)
@@ -24,6 +27,9 @@ def get_calibration_parameters(img_dir):
     
     # Load images from directory
     image_files = [os.path.join(img_dir, f) for f in os.listdir(img_dir) if f.endswith(".JPG")]
+    image_files = [imf for imf in image_files if pathlib.Path(imf).name not in exclude_list]
+    #print(image_files)
+    print(f"excluding {exclude_list}")
 
     all_charuco_ids = []
     all_charuco_corners = []
