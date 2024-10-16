@@ -12,8 +12,8 @@ SQUARES_VERTICALLY = 5
 SQUARES_HORIZONTALLY = 7
 #SQUARE_LENGTH = 0.03  # in meters
 #MARKER_LENGTH = 0.015  # in meters
-SQUARE_LENGTH = 0.10 # in meters
-MARKER_LENGTH = 0.08  # in meters
+SQUARE_LENGTH = 0.055 # in meters
+MARKER_LENGTH = 0.04  # in meters
 # ...
 #PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_set_1/'
 PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_gopro_max_100/'
