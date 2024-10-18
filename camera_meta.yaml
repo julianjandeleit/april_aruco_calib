@@ -1,0 +1,14 @@
+"GoPro Hero9":
+  pixel_width: 5184
+  pixel_height: 3888
+  focal_length_mm: 3.0
+  sensor_width_mm: 6.17
+  sensor_height_mm: 4.55
+"GoPro Max":
+  pixel_width: 5760
+  pixel_height: 2880
+  focal_length_mm: 3.0
+  sensor_width_mm: 6.17
+  sensor_height_mm: 4.55
+  crop_width_px: 800
+  crop_height_px: 800

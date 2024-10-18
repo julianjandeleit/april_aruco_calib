@@ -3,7 +3,7 @@ from PIL import Image
 from omnicv import fisheyeImgConv
 import math
 
-def convert(inname, outname):
+def convert(inname, outname,deg_x):
 
     equiRect = np.array(Image.open(inname))
 
@@ -33,13 +33,13 @@ def convert(inname, outname):
         persp = mapper.eqruirect2persp(equiRect, FOV, Theta, Phi, Hd, Wd)
         return Image.fromarray(persp)
 
-    img = get_block(equiRect, 90, 0,0)
+    img = get_block(equiRect, 90, deg_x,0)
     img.save(outname,"PNG")
     
 import sys
 import os
     
-def main():
+def main(deg_x):
     if len(sys.argv) != 3:
         print("Usage: python script_name.py <indir> <outdir>")
         sys.exit(1)
@@ -58,9 +58,9 @@ def main():
         infile = os.path.join(indir, filename)
         if os.path.isfile(infile):
             base, extension = os.path.splitext(filename)
-            outname = base + "_90" + extension
+            outname = base +"_" +str(deg_x) + extension
             outpath = os.path.join(outdir, outname)
-            convert(infile, outpath)
+            convert(infile, outpath,deg_x)
 
 if __name__ == "__main__":
-    main()
+    main(-45)
