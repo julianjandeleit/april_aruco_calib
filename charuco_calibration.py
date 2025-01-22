@@ -15,10 +15,10 @@ SQUARES_HORIZONTALLY = 7
 SQUARE_LENGTH = 0.055 # in meters
 MARKER_LENGTH = 0.04  # in meters
 # ...
-PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_set_1/'
-#PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_gopro_02/'
-ecl_list = ["GOPR0026.JPG"]
-#ecl_list  = ["GS__0010_90.JPG", "GS__0014_90.JPG"]
+#PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_set_1/'
+PATH_TO_YOUR_IMAGES = 'testdata/charuco_calib_gopro_02/'
+#ecl_list = ["GOPR0026.JPG"]
+ecl_list  = ["GS__0010_90.JPG", "GS__0014_90.JPG"]
 print(f"{ARUCO_DICT=}")
 # ------------------------------
 def get_calibration_parameters(img_dir, exclude_list=["GOPR0026.JPG"]):
