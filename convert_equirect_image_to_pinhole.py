@@ -63,4 +63,4 @@ def main(deg_x):
             convert(infile, outpath,deg_x)
 
 if __name__ == "__main__":
-    main(-45)
+    main(0)

@@ -1,5 +1,13 @@
 this directory contains software scripts and docs for tasks that support the biologists in several experiments.
 
+actual calibration using april tags and custom graph collapse is in april_tag_extrinsic_calibration.ipynb.
+This file contains a lot of experimentation. The actual working implementation is ion the cell
+_actually implement recursive graph resolution as formula_  and its following 3 cells.
+
+It requires a calibrated camera. This can be done with charuco_calibration.py .A working demonstration is charuco_calib_gopro_02 for calibration and extrinsic_calib_set_1 images for april tag reconstruction. Calibration can be validated with reproject_charuco.ipynb.
+
+Adjust charuco/april tag parameters acording to used markers:
+Here:
 
 square size, marker size: 4cm, 5.5cm (oder 7mm)
 
